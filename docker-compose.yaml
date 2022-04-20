@@ -18,9 +18,10 @@ services:
     env_file:
       - ./env/mysql.env
   composer:
-    build: ./dockerfile
-    dockerfile: composer.dockerfile
-  volumes:
+    build:
+      context: ./dockerfiles
+      dockerfile: composer.dockerfile
+    volumes:
     - ./src:/var/www/html
   # artisian:
   # npm:
